@@ -20,3 +20,18 @@ let correctText = text.replace(/\B'/g, '"').split('\n');
 const dialog = document.querySelector('.dialog').innerHTML = correctText.join(`<br>`)
 console.log(correctText);
 
+const name = document.querySelector('.inputName');
+const tel = document.querySelector('.inputTel');
+const email = document.querySelector('.inputEmail');
+const btn = document.querySelector('.btn');
+
+const nameRegExp = new RegExp(/^[a-z]$/i);
+const telRegExp = new RegExp((/^\+7[0-9]{10}$/));
+const emailRegExp = new RegExp(/^[a-z0-9_.-]+@[a-z0-9_.-]+\.[a-z]{2,4}$/i);
+
+btn.addEventListener('submit', () => {
+	if (nameRegExp(name)) {
+		name.className = `errorStyle`;
+		let errorName = document.querySelector('.errorName').className = 'errors errorName'
+	}
+})
